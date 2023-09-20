@@ -15,7 +15,17 @@ public class MorseInterpreter {
     }
 
     public String interpretToMorseCode(String s) {
-        return toMorseCodeMap.get(s);
+        StringBuilder sb = new StringBuilder();
+        char[] letters = s.toCharArray();
+        for (char l : letters) {
+            String letter = String.valueOf(l);
+            String result = toMorseCodeMap.get(letter);
+
+            sb.append(result);
+            sb.append(" ");
+        }
+
+        return sb.toString().trim();
     }
 
     public String interpretFromMorseCode(String s) {
