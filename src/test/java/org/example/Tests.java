@@ -41,4 +41,11 @@ public class Tests {
 
         Assertions.assertEquals("**** * *---", result);
     }
+
+    @Test
+    public void interpretSequenceFromMorseCode() {
+        String result = sut.interpretFromMorseCode("**** * *---");
+
+        Assertions.assertEquals("HEJ", result);
+    }
 }
