@@ -27,4 +27,11 @@ public class Tests {
 
         Assertions.assertEquals("--**", result);
     }
+
+    @Test
+    public void interpretSemicolon() {
+        String result = sut.interpret(";");
+
+        Assertions.assertEquals(" ", result);
+    }
 }
