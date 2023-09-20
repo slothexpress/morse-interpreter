@@ -37,6 +37,12 @@ public class MorseInterpreter {
             sb.append(result);
         }
 
+        if(sb.toString().equals("null")) {
+            System.out.println("INVALID INPUT TO TRANSLATE FROM MORSE CODE.");
+            System.out.println("'*' = short signal, '-' = long signal, ';' = space.");
+            return "";
+        }
+
         return sb.toString();
     }
 
