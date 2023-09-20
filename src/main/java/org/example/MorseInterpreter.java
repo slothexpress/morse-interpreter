@@ -65,7 +65,7 @@ public class MorseInterpreter {
         toMorseCodeMap.put(",", "--**--");
         toMorseCodeMap.put("?", "**--**");
 
-        toMorseCodeMap.put(";", " ");
+        toMorseCodeMap.put(" ", ";");
     }
 
     public void initializeFromMorseCodeMap() {
@@ -111,7 +111,7 @@ public class MorseInterpreter {
         fromMorseCodeMap.put("--**--", ",");
         fromMorseCodeMap.put("**--**", "?");
 
-        fromMorseCodeMap.put(" ", ";");
+        fromMorseCodeMap.put(";", " ");
     }
 
 }

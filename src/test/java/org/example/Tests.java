@@ -30,8 +30,9 @@ public class Tests {
 
     @Test
     public void interpretSemicolon() {
-        String result = sut.interpretToMorseCode(";");
+        String result = sut.interpretFromMorseCode(";");
 
         Assertions.assertEquals(" ", result);
     }
+    
 }
