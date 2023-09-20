@@ -8,22 +8,33 @@ public class Main {
 
         String result = "";
         MorseInterpreter morse = new MorseInterpreter();
-
-        System.out.println("SELECT YOUR CHOICE OF INTERPETATION. 1 = TO MORSE CODE, 2 = FROM MORSE CODE");
         Scanner scan = new Scanner(System.in);
-        int option = scan.nextInt();
-        scan.nextLine(); // Consume the newline character and clear scanner input
+        int number;
+
+        while(true) {
+            System.out.println("\nSELECT YOUR CHOICE OF INTERPETATION: 1 = TO MORSE CODE, 2 = FROM MORSE CODE");
+            String choice = scan.nextLine();
+
+            try {
+                number = Integer.parseInt(choice);
+
+                if(number == 1 || number == 2) {
+                    break;
+                } else {
+                    System.out.println("ONLY 1 or 2 IS A VALID CHOICE! PLEASE TRY CHOOSE AGAIN.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! Please enter a valid integer.");
+            }
+        }
 
         System.out.println("ENTER SEQUENCE TO TRANSLATE: ");
         String input = scan.nextLine();
 
-        switch (option) {
+        switch (number) {
             case 1: result = morse.interpretToMorseCode(input);
                 break;
             case 2: result = morse.interpretFromMorseCode(input);
-                break;
-            default:
-                System.out.println("INVALID CHOICE");
                 break;
         }
 
