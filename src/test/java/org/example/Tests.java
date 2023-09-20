@@ -20,4 +20,11 @@ public class Tests {
 
         Assertions.assertEquals("*-", result);
     }
+
+    @Test
+    public void interpretFromLetterZ() {
+        String result = sut.interpret("Z");
+
+        Assertions.assertEquals("--**", result);
+    }
 }
