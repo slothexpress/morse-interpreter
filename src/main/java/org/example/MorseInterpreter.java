@@ -4,61 +4,114 @@ import java.util.HashMap;
 
 public class MorseInterpreter {
 
-    HashMap<String, String> morseCodeMap;
+    HashMap<String, String> toMorseCodeMap;
+    HashMap<String, String> fromMorseCodeMap;
 
     public MorseInterpreter() {
-        morseCodeMap = new HashMap<>();
-        initializeMorseCodeMap();
+        toMorseCodeMap = new HashMap<>();
+        fromMorseCodeMap = new HashMap<>();
+        initializeToMorseCodeMap();
+        initializeFromMorseCodeMap();
     }
 
-    public String interpret(String s) {
-        return morseCodeMap.get(s);
+    public String interpretToMorseCode(String s) {
+        return toMorseCodeMap.get(s);
     }
 
-    public void initializeMorseCodeMap() {
-        morseCodeMap.put("A", "*-");
-        morseCodeMap.put("B", "-***");
-        morseCodeMap.put("C", "-*-*");
-        morseCodeMap.put("D", "-**");
-        morseCodeMap.put("E", "*");
-        morseCodeMap.put("F", "**-*");
-        morseCodeMap.put("G", "--*");
-        morseCodeMap.put("H", "****");
-        morseCodeMap.put("I", "**");
-        morseCodeMap.put("J", "*---");
-        morseCodeMap.put("K", "-*-");
-        morseCodeMap.put("L", "*-**");
-        morseCodeMap.put("M", "--");
-        morseCodeMap.put("N", "-*");
-        morseCodeMap.put("O", "---");
-        morseCodeMap.put("P", "*--*");
-        morseCodeMap.put("Q", "--*-");
-        morseCodeMap.put("R", "*-*");
-        morseCodeMap.put("S", "***");
-        morseCodeMap.put("T", "-");
-        morseCodeMap.put("U", "**-");
-        morseCodeMap.put("V", "***-");
-        morseCodeMap.put("W", "*--");
-        morseCodeMap.put("X", "-**-");
-        morseCodeMap.put("Y", "-*--");
-        morseCodeMap.put("Z", "--**");
+    public String interpretFromMorseCode(String s) {
+        return fromMorseCodeMap.get(s);
+    }
 
-        morseCodeMap.put("0", "-----");
-        morseCodeMap.put("1", "*----");
-        morseCodeMap.put("2", "**---");
-        morseCodeMap.put("3", "***--");
-        morseCodeMap.put("4", "****-");
-        morseCodeMap.put("5", "*****");
-        morseCodeMap.put("6", "-****");
-        morseCodeMap.put("7", "--***");
-        morseCodeMap.put("8", "---**");
-        morseCodeMap.put("9", "----*");
+    public void initializeToMorseCodeMap() {
+        toMorseCodeMap.put("A", "*-");
+        toMorseCodeMap.put("B", "-***");
+        toMorseCodeMap.put("C", "-*-*");
+        toMorseCodeMap.put("D", "-**");
+        toMorseCodeMap.put("E", "*");
+        toMorseCodeMap.put("F", "**-*");
+        toMorseCodeMap.put("G", "--*");
+        toMorseCodeMap.put("H", "****");
+        toMorseCodeMap.put("I", "**");
+        toMorseCodeMap.put("J", "*---");
+        toMorseCodeMap.put("K", "-*-");
+        toMorseCodeMap.put("L", "*-**");
+        toMorseCodeMap.put("M", "--");
+        toMorseCodeMap.put("N", "-*");
+        toMorseCodeMap.put("O", "---");
+        toMorseCodeMap.put("P", "*--*");
+        toMorseCodeMap.put("Q", "--*-");
+        toMorseCodeMap.put("R", "*-*");
+        toMorseCodeMap.put("S", "***");
+        toMorseCodeMap.put("T", "-");
+        toMorseCodeMap.put("U", "**-");
+        toMorseCodeMap.put("V", "***-");
+        toMorseCodeMap.put("W", "*--");
+        toMorseCodeMap.put("X", "-**-");
+        toMorseCodeMap.put("Y", "-*--");
+        toMorseCodeMap.put("Z", "--**");
 
-        morseCodeMap.put(".", "*-*-*-*");
-        morseCodeMap.put(",", "--**--");
-        morseCodeMap.put("?", "**--**");
+        toMorseCodeMap.put("0", "-----");
+        toMorseCodeMap.put("1", "*----");
+        toMorseCodeMap.put("2", "**---");
+        toMorseCodeMap.put("3", "***--");
+        toMorseCodeMap.put("4", "****-");
+        toMorseCodeMap.put("5", "*****");
+        toMorseCodeMap.put("6", "-****");
+        toMorseCodeMap.put("7", "--***");
+        toMorseCodeMap.put("8", "---**");
+        toMorseCodeMap.put("9", "----*");
 
-        morseCodeMap.put(";", " ");
+        toMorseCodeMap.put(".", "*-*-*-*");
+        toMorseCodeMap.put(",", "--**--");
+        toMorseCodeMap.put("?", "**--**");
+
+        toMorseCodeMap.put(";", " ");
+    }
+
+    public void initializeFromMorseCodeMap() {
+        fromMorseCodeMap.put("*-", "A");
+        fromMorseCodeMap.put("-***", "B");
+        fromMorseCodeMap.put("-*-*", "C");
+        fromMorseCodeMap.put("-**", "D");
+        fromMorseCodeMap.put("*", "E");
+        fromMorseCodeMap.put("**-*", "F");
+        fromMorseCodeMap.put("--*", "G");
+        fromMorseCodeMap.put("****", "H");
+        fromMorseCodeMap.put("**", "I");
+        fromMorseCodeMap.put("*---", "J");
+        fromMorseCodeMap.put("-*-", "K");
+        fromMorseCodeMap.put("*-**", "L");
+        fromMorseCodeMap.put("--", "M");
+        fromMorseCodeMap.put("-*", "N");
+        fromMorseCodeMap.put("---", "O");
+        fromMorseCodeMap.put("*--*", "P");
+        fromMorseCodeMap.put("--*-", "Q");
+        fromMorseCodeMap.put("*-*", "R");
+        fromMorseCodeMap.put("***", "S");
+        fromMorseCodeMap.put("-", "T");
+        fromMorseCodeMap.put("**-", "U");
+        fromMorseCodeMap.put("***-", "V");
+        fromMorseCodeMap.put("*--", "W");
+        fromMorseCodeMap.put("-**-", "X");
+        fromMorseCodeMap.put("-*--", "Y");
+        fromMorseCodeMap.put("--**", "Z");
+
+        fromMorseCodeMap.put("-----", "0");
+        fromMorseCodeMap.put("*----", "1");
+        fromMorseCodeMap.put("**---", "2");
+        fromMorseCodeMap.put("***--", "3");
+        fromMorseCodeMap.put("****-", "4");
+        fromMorseCodeMap.put("*****", "5");
+        fromMorseCodeMap.put("-****", "6");
+        fromMorseCodeMap.put("--***", "7");
+        fromMorseCodeMap.put("---**", "8");
+        fromMorseCodeMap.put("----*", "9");
+
+        fromMorseCodeMap.put("*-*-*-*", ".");
+        fromMorseCodeMap.put("--**--", ",");
+        fromMorseCodeMap.put("**--**", "?");
+
+        fromMorseCodeMap.put(" ", ";");
     }
 
 }

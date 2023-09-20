@@ -9,28 +9,28 @@ public class Tests {
 
     @Test
     public void interpretToLetterA() {
-        String result = sut.interpret("*-");
+        String result = sut.interpretFromMorseCode("*-");
 
         Assertions.assertEquals("A", result);
     }
 
     @Test
     public void interpretFromLetterA() {
-        String result = sut.interpret("A");
+        String result = sut.interpretToMorseCode("A");
 
         Assertions.assertEquals("*-", result);
     }
 
     @Test
     public void interpretFromLetterZ() {
-        String result = sut.interpret("Z");
+        String result = sut.interpretToMorseCode("Z");
 
         Assertions.assertEquals("--**", result);
     }
 
     @Test
     public void interpretSemicolon() {
-        String result = sut.interpret(";");
+        String result = sut.interpretToMorseCode(";");
 
         Assertions.assertEquals(" ", result);
     }
