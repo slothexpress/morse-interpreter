@@ -29,7 +29,15 @@ public class MorseInterpreter {
     }
 
     public String interpretFromMorseCode(String s) {
-        return fromMorseCodeMap.get(s);
+        StringBuilder sb = new StringBuilder();
+        String[] letters = s.split(" ");
+        for (String l : letters) {
+            String letter = String.valueOf(l);
+            String result = fromMorseCodeMap.get(letter);
+            sb.append(result);
+        }
+
+        return sb.toString();
     }
 
     public void initializeToMorseCodeMap() {

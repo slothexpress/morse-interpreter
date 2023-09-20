@@ -43,9 +43,23 @@ public class Tests {
     }
 
     @Test
+    public void interpretTwoWordSequenceToMorseCode() {
+        String result = sut.interpretToMorseCode("HEJ HEJ");
+
+        Assertions.assertEquals("**** * *--- ; **** * *---", result);
+    }
+
+    @Test
     public void interpretSequenceFromMorseCode() {
         String result = sut.interpretFromMorseCode("**** * *---");
 
         Assertions.assertEquals("HEJ", result);
+    }
+
+    @Test
+    public void interpretTwoWordSequenceFromMorseCode() {
+        String result = sut.interpretFromMorseCode("**** * *--- ; **** * *---");
+
+        Assertions.assertEquals("HEJ HEJ", result);
     }
 }
