@@ -19,7 +19,7 @@ public class MorseInterpreter {
         char[] letters = s.toCharArray();
         for (char l : letters) {
             String letter = String.valueOf(l);
-            String result = toMorseCodeMap.get(letter);
+            String result = toMorseCodeMap.get(letter.toUpperCase());
 
             sb.append(result);
             sb.append(" ");
