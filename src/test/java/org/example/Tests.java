@@ -22,17 +22,17 @@ public class Tests {
     }
 
     @Test
-    public void interpretFromLetterZ() {
-        String result = sut.interpretToMorseCode("Z");
-
-        Assertions.assertEquals("--**", result);
-    }
-
-    @Test
-    public void interpretSemicolon() {
+    public void interpretFromSemicolon() {
         String result = sut.interpretFromMorseCode(";");
 
         Assertions.assertEquals(" ", result);
+    }
+
+    @Test
+    public void interpretToSemicolon() {
+        String result = sut.interpretToMorseCode(" ");
+
+        Assertions.assertEquals(";", result);
     }
 
     @Test
