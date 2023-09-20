@@ -13,4 +13,11 @@ public class Tests {
 
         Assertions.assertEquals("A", result);
     }
+
+    @Test
+    public void interpretToLetterA() {
+        String result = sut.interpret("A");
+
+        Assertions.assertEquals("*-", result);
+    }
 }
