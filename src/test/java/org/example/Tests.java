@@ -8,14 +8,14 @@ public class Tests {
     MorseInterpreter sut = new MorseInterpreter();
 
     @Test
-    public void interpretFromLetterA() {
+    public void interpretToLetterA() {
         String result = sut.interpret("*-");
 
         Assertions.assertEquals("A", result);
     }
 
     @Test
-    public void interpretToLetterA() {
+    public void interpretFromLetterA() {
         String result = sut.interpret("A");
 
         Assertions.assertEquals("*-", result);
