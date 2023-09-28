@@ -25,7 +25,14 @@ public class MorseInterpreter {
             sb.append(" ");
         }
 
-        return sb.toString().trim();
+        String res = sb.toString().trim();
+        if (res.contains("null")) {
+            System.out.println("INVALID INPUT TO TRANSLATE INTO MORSE CODE.");
+            System.out.println("Only letters A-Z, digits, space, period, comma and question mark are valid.");
+            return "";
+        }
+
+        return res;
     }
 
     public String interpretFromMorseCode(String s) {
@@ -37,7 +44,7 @@ public class MorseInterpreter {
             sb.append(result);
         }
 
-        if(sb.toString().equals("null")) {
+        if (sb.toString().contains("null")) {
             System.out.println("INVALID INPUT TO TRANSLATE FROM MORSE CODE.");
             System.out.println("'*' = short signal, '-' = long signal, ';' = space.");
             return "";
