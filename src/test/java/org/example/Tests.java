@@ -62,4 +62,13 @@ public class Tests {
 
         Assertions.assertEquals("HEJ HEJ", result);
     }
+
+    @Test
+    public void invalidInputResultsInEmptyString() {
+        String resultFromMorse = sut.interpretFromMorseCode("åäö/");
+        String resultToMorse = sut.interpretToMorseCode("åäö(");
+
+        Assertions.assertEquals("", resultToMorse);
+        Assertions.assertEquals("", resultFromMorse);
+    }
 }
