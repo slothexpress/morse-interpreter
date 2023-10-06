@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class ConsoleApplication {
+public class MorseCodeConsoleApplication {
     public static void main(String[] args) {
 
         while(true) {
