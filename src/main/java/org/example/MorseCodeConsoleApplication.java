@@ -1,9 +1,8 @@
 package org.example;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class Main {
+public class ConsoleApplication {
     public static void main(String[] args) {
 
         while(true) {
